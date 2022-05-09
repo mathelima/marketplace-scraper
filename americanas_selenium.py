@@ -7,15 +7,15 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 americanas = 'https://www.americanas.com.br'
-produtos = ['copo-stanley']
+products = ['copo-stanley']
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome / 100.0.4896.127 Safari/537.36'}
 
 
-def main(produtos):
+def main(products):
     cnpjs = []
-    for produto in produtos:
-        url = americanas + '/busca/' + produto
+    for product in products:
+        url = americanas + '/busca/' + product
         products_links = search_products(url)
         for product_link in products_links:
             seller_url = search_seller(product_link)
@@ -101,4 +101,4 @@ def search_cnpj(seller_url):
 
 
 if __name__ == '__main__':
-    main(produtos)
+    main(products)
